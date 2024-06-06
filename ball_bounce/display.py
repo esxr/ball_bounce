@@ -1,4 +1,5 @@
 import pygame
+import math
 
 class Display:
     def __init__(self, width, height):
@@ -30,8 +31,8 @@ class Display:
         points = []
         angle = 360 / sides
         for i in range(sides):
-            x = position[0] + size * pygame.math.cos(pygame.math.radians(angle * i))
-            y = position[1] + size * pygame.math.sin(pygame.math.radians(angle * i))
+            x = position[0] + size * math.cos(math.radians(angle * i))
+            y = position[1] + size * math.sin(math.radians(angle * i))
             points.append((x, y))
         return points
 

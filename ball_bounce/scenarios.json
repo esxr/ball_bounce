@@ -1,6 +1,13 @@
 {
     "scenarios": [
       {
+        "name": "Growing Polygon",
+        "shape": "polygon",
+        "size_change": 0,
+        "sides_change": 1,
+        "duration": 10
+      },
+      {
         "name": "Color Changing Ball",
         "shape": "circle",
         "color_change": true,
@@ -16,27 +23,20 @@
       {
         "name": "Growing Ball",
         "shape": "circle",
-        "size_change": 5,
+        "size_change": 1,
         "duration": 10
       },
       {
         "name": "Ball Bigger Rectangle Shorter",
         "shape": "circle",
-        "size_change": 5,
+        "size_change": 1,
         "duration": 10
       },
       {
         "name": "Ball Bigger Rectangle Shorter Color Change",
         "shape": "circle",
         "color_change": true,
-        "size_change": 5,
-        "duration": 10
-      },
-      {
-        "name": "Growing Polygon",
-        "shape": "polygon",
-        "size_change": 0,
-        "sides_change": 1,
+        "size_change": 1,
         "duration": 10
       },
       {

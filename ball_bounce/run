@@ -1,15 +1,18 @@
 #!/bin/bash
 
-# Step 1: Create output directory if it doesn't exist
-mkdir -p output
-
 # Step 2: Activate the virtual environment
 echo "Activating the virtual environment..."
 source .venv/bin/activate
 
 # Step 3: Run the main script
 echo "Running the main script..."
-python base.py --config scenarios.json --output output
+if [ "$1" == "--record" ]; then
+    rm -rf output
+    mkdir -p output
+    python base.py --config scenarios.json --output output --record
+else
+    python base.py --config scenarios.json --output output
+fi
 
 # Step 4: Deactivate the virtual environment
 deactivate
