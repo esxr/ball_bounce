@@ -16,15 +16,18 @@ class Display:
             if event.type == pygame.QUIT:
                 self.running = False
 
-    def update_display(self, shape, color, position, size, sides=None):
+    def update_display(self, shape, boundary):
         self.window.fill(self.background_color)
-        if shape == 'circle':
-            pygame.draw.circle(self.window, color, position, size)
-        elif shape == 'rectangle':
-            pygame.draw.rect(self.window, color, (position[0] - size, position[1] - size, size * 2, size * 2))
-        elif shape == 'polygon' and sides:
-            points = self.calculate_polygon_points(position, size, sides)
-            pygame.draw.polygon(self.window, color, points)
+        # Draw the boundary
+        pygame.draw.rect(self.window, (255, 255, 255), (boundary.x, boundary.y, boundary.width, boundary.height), 2)
+        # Draw the shape within the boundary
+        if shape.shape == 'circle':
+            pygame.draw.circle(self.window, shape.color, shape.position, shape.size)
+        elif shape.shape == 'rectangle':
+            pygame.draw.rect(self.window, shape.color, (shape.position[0] - shape.size, shape.position[1] - shape.size, shape.size * 2, shape.size * 2))
+        elif shape.shape == 'polygon' and shape.sides:
+            points = self.calculate_polygon_points(shape.position, shape.size, shape.sides)
+            pygame.draw.polygon(self.window, shape.color, points)
         pygame.display.flip()
 
     def calculate_polygon_points(self, position, size, sides):

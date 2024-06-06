@@ -3,7 +3,8 @@ import json
 import os
 import time
 from display import Display
-from bouncing_object import BouncingObject
+from shape import Shape
+from boundary import Boundary
 from recorder import Recorder
 
 def load_scenarios(file_path):
@@ -13,7 +14,8 @@ def load_scenarios(file_path):
 
 def run_scenario(config, output_dir, record):
     display = Display(640, 480)
-    obj = BouncingObject(config["shape"], 20, (5, 5), config)
+    shape = Shape(config["shape"], 20, (5, 5), config.get("color_change", False), config.get("size_change", 0), config.get("sides_change", 0), config.get("position_change", False))
+    boundary = Boundary(config["rect_x"], config["rect_y"], config["rect_width"], config["rect_height"])
     recorder = None
     if record:
         output_file = os.path.join(output_dir, config["name"] + ".mp4")
@@ -22,9 +24,9 @@ def run_scenario(config, output_dir, record):
     start_time = time.time()
     while display.running and (time.time() - start_time < config["duration"]):
         display.handle_events()
-        obj.move_object()
-        obj.bounce_object(display.width, display.height)
-        display.update_display(obj.shape, obj.color, obj.position, obj.size, obj.sides)
+        shape.move()
+        shape.bounce(boundary)
+        display.update_display(shape, boundary)
         if record:
             recorder.record_frame(display.window)
         display.tick(60)
