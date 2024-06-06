@@ -1,98 +1,36 @@
 {
-  "scenarios": [
-    {
-      "name": "Growing Polygon",
-      "shape": "polygon",
-      "size_change": 0,
-      "sides_change": 1,
-      "duration": 10,
-      "rect_x": 100,
-      "rect_y": 100,
-      "rect_width": 440,
-      "rect_height": 280,
-      "speed_increase_factor": 1.01,
-      "growth_rate": 0.1,
-      "carrying_capacity": 200
-    },
-    {
-      "name": "Color Changing Ball",
-      "shape": "circle",
-      "color_change": true,
-      "size_change": 0,
-      "duration": 10,
-      "rect_x": 100,
-      "rect_y": 100,
-      "rect_width": 440,
-      "rect_height": 280,
-      "speed_increase_factor": 1.01,
-      "growth_rate": 0.1,
-      "carrying_capacity": 200
-    },
-    {
-      "name": "Shrinking Rectangle",
-      "shape": "rectangle",
-      "size_change": -5,
-      "duration": 10,
-      "rect_x": 100,
-      "rect_y": 100,
-      "rect_width": 440,
-      "rect_height": 280,
-      "speed_increase_factor": 1.01,
-      "growth_rate": 0.1,
-      "carrying_capacity": 200
-    },
-    {
-      "name": "Growing Ball",
-      "shape": "circle",
-      "size_change": 5,
-      "duration": 10,
-      "rect_x": 100,
-      "rect_y": 100,
-      "rect_width": 440,
-      "rect_height": 280,
-      "speed_increase_factor": 1.01,
-      "growth_rate": 0.1,
-      "carrying_capacity": 200
-    },
-    {
-      "name": "Ball Bigger Rectangle Shorter",
-      "shape": "circle",
-      "size_change": 5,
-      "duration": 10,
-      "rect_x": 100,
-      "rect_y": 100,
-      "rect_width": 440,
-      "rect_height": 280,
-      "speed_increase_factor": 1.01,
-      "growth_rate": 0.1,
-      "carrying_capacity": 200
-    },
-    {
-      "name": "Ball Bigger Rectangle Shorter Color Change",
-      "shape": "circle",
-      "color_change": true,
-      "size_change": 5,
-      "duration": 10,
-      "rect_x": 100,
-      "rect_y": 100,
-      "rect_width": 440,
-      "rect_height": 280,
-      "speed_increase_factor": 1.01,
-      "growth_rate": 0.1,
-      "carrying_capacity": 200
-    },
-    {
-      "name": "Moving Rectangle",
-      "shape": "rectangle",
-      "position_change": true,
-      "duration": 10,
-      "rect_x": 100,
-      "rect_y": 100,
-      "rect_width": 440,
-      "rect_height": 280,
-      "speed_increase_factor": 1.01,
-      "growth_rate": 0.1,
-      "carrying_capacity": 200
-    }
-  ]
+    "scenarios": [
+        {
+            "name": "Scenario 948",
+            "shape": "rectangle",
+            "color_change": true,
+            "size_change": 0,
+            "duration": 10,
+            "rect_x": 145,
+            "rect_y": 106,
+            "rect_width": 345,
+            "rect_height": 398,
+            "speed_increase_factor": 1.03,
+            "growth_rate": 0.06,
+            "carrying_capacity": 80,
+            "sides_change": 1,
+            "position_change": false
+        },
+        {
+            "name": "Scenario 107",
+            "shape": "polygon",
+            "color_change": false,
+            "size_change": 4,
+            "duration": 13,
+            "rect_x": 77,
+            "rect_y": 114,
+            "rect_width": 457,
+            "rect_height": 203,
+            "speed_increase_factor": 1.02,
+            "growth_rate": 0.04,
+            "carrying_capacity": 80,
+            "sides_change": 1,
+            "position_change": false
+        }
+    ]
 }
