@@ -11,8 +11,13 @@
             "id": "814ca67b68befe87",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Strategy.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
             }
           }
         ],
@@ -98,6 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Strategy.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,6 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Strategy.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -180,6 +187,7 @@
             "state": {
               "type": "localgraph",
               "state": {
+                "file": "Strategy.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -233,12 +241,44 @@
       "canvas:Create new canvas": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "random-note:Open random note": false
+      "random-note:Open random note": false,
+      "obsidian-excalidraw-plugin:New Excalidraw drawing": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "juggl:Juggl global graph": false,
+      "periodic-notes:Open today": false,
+      "templater-obsidian:Templater": false,
+      "workbench-obsidian:Workbench": false,
+      "obsidian-extract-pdf-highlights:PDF Highlights": false,
+      "obsidian-textgenerator-plugin:Generate Text!": false,
+      "obsidian-textgenerator-plugin:Text Generator: Templates Packages Manager": false,
+      "breadcrumbs:Breadcrumbs Visualisation": false
     }
   },
-  "active": "43cd330bf7dade7a",
+  "active": "814ca67b68befe87",
   "lastOpenFiles": [
-    "Untitled.md",
+    "ball_bounce/__pycache__/recorder.cpython-311.pyc",
+    "ball_bounce/__pycache__/display.cpython-311.pyc",
+    "ball_bounce/__pycache__/bouncing_object.cpython-311.pyc",
+    "ball_bounce/scenarios.json",
+    "ball_bounce/run",
+    "ball_bounce/requirements.txt",
+    "ball_bounce/recorder.py",
+    "ball_bounce/install",
+    "ball_bounce/display.py",
+    "ball_bounce/bouncing_object.py",
+    "ball_bounce/base.py",
+    "ball_bouncing/myenv/lib/python3.11/site-packages/numpy/random/LICENSE.md",
+    "ball_bouncing/myenv/lib/python3.11/site-packages/pygame/examples/data/background.gif",
+    "ball_bouncing/myenv/lib/python3.11/site-packages/pygame/examples/data/alien1.gif",
+    "ball_bouncing/myenv/lib/python3.11/site-packages/pygame/examples/data/brick.png",
+    "ball_bouncing/myenv/lib/python3.11/site-packages/pygame/examples/data/red.jpg",
+    "ball_bouncing/myenv/lib/python3.11/site-packages/pygame/examples/data/alien2.gif",
+    "ball_bouncing/myenv/lib/python3.11/site-packages/pygame/examples/data/alien3.gif",
+    "ball_bouncing/myenv/lib/python3.11/site-packages/pygame/examples/data/asprite.bmp",
+    "ball_bouncing/myenv/lib/python3.11/site-packages/pygame/examples/data/player1.gif",
+    "ball_bouncing/myenv/lib/python3.11/site-packages/pygame/examples/data/shot.gif",
+    "ball_bouncing/myenv/lib/python3.11/site-packages/pygame/examples/data/chimp.png",
+    "Strategy.md",
     "Thesis (Brainstorming).md",
     "Methodology (Rough).md",
     "Thesis (Outline).md",
