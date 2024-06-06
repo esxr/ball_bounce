@@ -14,7 +14,7 @@ def load_scenarios(file_path):
 
 def run_scenario(config, output_dir, record):
     display = Display(640, 480)
-    shape = Shape(config["shape"], 20, (5, 5), config.get("color_change", False), config.get("size_change", 0), config.get("sides_change", 0), config.get("position_change", False))
+    shape = Shape(config)
     boundary = Boundary(config["rect_x"], config["rect_y"], config["rect_width"], config["rect_height"])
     recorder = None
     if record:

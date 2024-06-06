@@ -9,7 +9,10 @@
           "rect_x": 100,
           "rect_y": 100,
           "rect_width": 440,
-          "rect_height": 280
+          "rect_height": 280,
+          "speed_increase_factor": 1.01,
+          "growth_rate": 0.1,
+          "carrying_capacity": 200
       },
       {
           "name": "Shrinking Rectangle",
@@ -19,7 +22,10 @@
           "rect_x": 100,
           "rect_y": 100,
           "rect_width": 440,
-          "rect_height": 280
+          "rect_height": 280,
+          "speed_increase_factor": 1.01,
+          "growth_rate": 0.1,
+          "carrying_capacity": 200
       },
       {
           "name": "Growing Ball",
@@ -29,7 +35,10 @@
           "rect_x": 100,
           "rect_y": 100,
           "rect_width": 440,
-          "rect_height": 280
+          "rect_height": 280,
+          "speed_increase_factor": 1.01,
+          "growth_rate": 0.1,
+          "carrying_capacity": 200
       },
       {
           "name": "Ball Bigger Rectangle Shorter",
@@ -39,7 +48,10 @@
           "rect_x": 100,
           "rect_y": 100,
           "rect_width": 440,
-          "rect_height": 280
+          "rect_height": 280,
+          "speed_increase_factor": 1.01,
+          "growth_rate": 0.1,
+          "carrying_capacity": 200
       },
       {
           "name": "Ball Bigger Rectangle Shorter Color Change",
@@ -50,7 +62,10 @@
           "rect_x": 100,
           "rect_y": 100,
           "rect_width": 440,
-          "rect_height": 280
+          "rect_height": 280,
+          "speed_increase_factor": 1.01,
+          "growth_rate": 0.1,
+          "carrying_capacity": 200
       },
       {
           "name": "Growing Polygon",
@@ -61,7 +76,10 @@
           "rect_x": 100,
           "rect_y": 100,
           "rect_width": 440,
-          "rect_height": 280
+          "rect_height": 280,
+          "speed_increase_factor": 1.01,
+          "growth_rate": 0.1,
+          "carrying_capacity": 200
       },
       {
           "name": "Moving Rectangle",
@@ -71,7 +89,10 @@
           "rect_x": 100,
           "rect_y": 100,
           "rect_width": 440,
-          "rect_height": 280
+          "rect_height": 280,
+          "speed_increase_factor": 1.01,
+          "growth_rate": 0.1,
+          "carrying_capacity": 200
       }
   ]
 }
