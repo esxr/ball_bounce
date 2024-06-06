@@ -27,7 +27,7 @@ def generate_random_scenario():
 
 def generate_scenarios(num_scenarios):
     scenarios = {"scenarios": [generate_random_scenario() for _ in range(num_scenarios)]}
-    with (open('scenarios.json', 'w') as file):
+    with open('scenarios.json', 'w') as file:
         json.dump(scenarios, file, indent=4)
 
 if __name__ == "__main__":

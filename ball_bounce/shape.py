@@ -51,4 +51,6 @@ class Shape:
         if self.position_change:
             max_x = max(0, 640 - int(self.size))
             max_y = max(0, 480 - int(self.size))
-            self.position = [random.randint(int(self.size), max_x), random.randint(int(self.size), max_y)]
+            min_x = min(max_x, int(self.size))
+            min_y = min(max_y, int(self.size))
+            self.position = [random.randint(min_x, max_x), random.randint(min_y, max_y)]
