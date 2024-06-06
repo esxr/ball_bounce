@@ -1,0 +1,18 @@
+{
+    "scenarios": [
+      {
+        "name": "Growing Polygon",
+        "shape": "polygon",
+        "size_change": 0,
+        "sides_change": 1,
+        "duration": 10,
+        "rect_x": 100,
+        "rect_y": 100,
+        "rect_width": 440,
+        "rect_height": 280,
+        "speed_increase_factor": 1.01,
+        "growth_rate": 0.1,
+        "carrying_capacity": 200
+      }
+    ]
+  }

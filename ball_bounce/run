@@ -1,20 +1,14 @@
 #!/bin/bash
 
-# Step 2: Activate the virtual environment
+# Step 1: Activate the virtual environment
 echo "Activating the virtual environment..."
 source .venv/bin/activate
 
-# Step 3: Run the main script
+# Step 2: Run the main script with all provided arguments
 echo "Running the main script..."
-if [ "$1" == "--record" ]; then
-    rm -rf output
-    mkdir -p output
-    python base.py --config scenarios.json --output output --record
-else
-    python base.py --config scenarios.json --output output
-fi
+python base.py "$@"
 
-# Step 4: Deactivate the virtual environment
+# Step 3: Deactivate the virtual environment
 deactivate
 
 echo "Execution complete!"

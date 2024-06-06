@@ -43,7 +43,7 @@ def main(config_file, output_dir, record):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run bouncing object scenarios.")
-    parser.add_argument('--config', type=str, required=True, help='Path to the JSON configuration file.')
+    parser.add_argument('--config', type=str, default='scenarios.json', help='Path to the JSON configuration file.')
     parser.add_argument('--output', type=str, default='output', help='Directory to save the output videos.')
     parser.add_argument('--record', action='store_true', help='Specify this flag to record the simulation.')
     args = parser.parse_args()
