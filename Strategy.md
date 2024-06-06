@@ -4,7 +4,7 @@ ___
 - maze DFS + BFS videos with music (100 videos)
 - Math function videos (using manim) (100 videos)
 - AI Generated
-	- 
+	- ...
 
 ___
 ### Tools

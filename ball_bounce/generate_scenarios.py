@@ -2,18 +2,12 @@ import json
 import random
 import argparse
 
-def generate_random_scenario():
+def generate_random_shape():
     shapes = ['circle', 'rectangle', 'polygon']
-    scenario = {
-        "name": f"Scenario {random.randint(1, 1000)}",
+    shape = {
         "shape": random.choice(shapes),
         "color_change": random.choice([True, False]),
         "size_change": round(random.uniform(-5.0, 5.0), 2),
-        "duration": random.randint(5, 20),
-        "rect_x": random.randint(50, 150),
-        "rect_y": random.randint(50, 150),
-        "rect_width": random.randint(300, 500),
-        "rect_height": random.randint(200, 400),
         "speed_increase_factor": round(random.uniform(1.01, 1.05), 2),
         "growth_rate": round(random.uniform(0.01, 0.1), 2),
         "carrying_capacity": round(random.uniform(50.0, 300.0), 2),
@@ -22,6 +16,18 @@ def generate_random_scenario():
         "initial_size": round(random.uniform(10.0, 50.0), 2),
         "initial_speed_x": round(random.uniform(1.0, 10.0), 2),
         "initial_speed_y": round(random.uniform(1.0, 10.0), 2)
+    }
+    return shape
+
+def generate_random_scenario():
+    scenario = {
+        "name": f"Scenario {random.randint(1, 1000)}",
+        "duration": random.randint(5, 20),
+        "rect_x": random.randint(50, 150),
+        "rect_y": random.randint(50, 150),
+        "rect_width": random.randint(300, 500),
+        "rect_height": random.randint(200, 400),
+        "shapes": [generate_random_shape() for _ in range(random.randint(1, 5))]
     }
     return scenario
 

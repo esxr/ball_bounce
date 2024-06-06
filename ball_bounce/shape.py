@@ -12,7 +12,6 @@ class Shape:
         self.color_change = config.get("color_change", False)
         self.size_change = config.get("size_change", 0)
         self.sides_change = config.get("sides_change", 0)
-        self.position_change = config.get("position_change", False)
         self.speed_increase_factor = float(config.get("speed_increase_factor", 1.01))
         self.growth_rate = float(config.get("growth_rate", 0.1))
         self.carrying_capacity = float(config.get("carrying_capacity", 300))
@@ -22,23 +21,30 @@ class Shape:
         self.position[1] += self.speed[1]
 
     def bounce(self, boundary):
+        collision = False
         if self.position[0] - self.size <= boundary.x:
             self.speed[0] = abs(self.speed[0]) * self.speed_increase_factor
             self.position[0] = boundary.x + self.size
             self.change_properties()
+            collision = True
         elif self.position[0] + self.size >= boundary.x + boundary.width:
             self.speed[0] = -abs(self.speed[0]) * self.speed_increase_factor
             self.position[0] = boundary.x + boundary.width - self.size
             self.change_properties()
+            collision = True
         
         if self.position[1] - self.size <= boundary.y:
             self.speed[1] = abs(self.speed[1]) * self.speed_increase_factor
             self.position[1] = boundary.y + self.size
             self.change_properties()
+            collision = True
         elif self.position[1] + self.size >= boundary.y + boundary.height:
             self.speed[1] = -abs(self.speed[1]) * self.speed_increase_factor
             self.position[1] = boundary.y + boundary.height - self.size
             self.change_properties()
+            collision = True
+
+        return collision
 
     def change_properties(self):
         if self.color_change:
@@ -48,9 +54,3 @@ class Shape:
         self.size = max(10, self.size)
         if self.sides is not None:
             self.sides = min(12, self.sides + self.sides_change)
-        if self.position_change:
-            max_x = max(0, 640 - int(self.size))
-            max_y = max(0, 480 - int(self.size))
-            min_x = min(max_x, int(self.size))
-            min_y = min(max_y, int(self.size))
-            self.position = [random.randint(min_x, max_x), random.randint(min_y, max_y)]

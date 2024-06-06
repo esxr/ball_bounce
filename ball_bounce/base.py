@@ -6,6 +6,7 @@ from display import Display
 from shape import Shape
 from boundary import Boundary
 from recorder import Recorder
+import psutil
 
 def load_scenarios(file_path):
     with open(file_path, 'r') as file:
@@ -14,22 +15,36 @@ def load_scenarios(file_path):
 
 def run_scenario(config, output_dir, record):
     display = Display(640, 480)
-    shape = Shape(config)
     boundary = Boundary(config["rect_x"], config["rect_y"], config["rect_width"], config["rect_height"])
+    
+    shapes = [Shape(shape_config) for shape_config in config["shapes"]]
+    
     recorder = None
     if record:
         output_file = os.path.join(output_dir, config["name"] + ".mp4")
         recorder = Recorder(640, 480, output_file)
 
     start_time = time.time()
+    base_fps = 100
     while display.running and (time.time() - start_time < config["duration"]):
         display.handle_events()
-        shape.move()
-        shape.bounce(boundary)
-        display.update_display(shape, boundary)
+        
+        # Check CPU usage and adjust FPS
+        # cpu_usage = psutil.cpu_percent(interval=0.1)
+        # if cpu_usage > 75:
+        #     fps = max(20, base_fps - int((cpu_usage - 75) / 5))
+        # else:
+        #     fps = base_fps
+
+        fps = base_fps
+
+        for shape in shapes:
+            shape.move()
+            shape.bounce(boundary)
+        frame = display.update_display(shapes, boundary)
         if record:
             recorder.record_frame(display.window)
-        display.tick(60)
+        display.tick(fps)
     
     if record:
         recorder.release()
