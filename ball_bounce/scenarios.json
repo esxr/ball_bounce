@@ -1,25 +1,25 @@
 {
     "scenarios": [
         {
-            "name": "Scenario 118",
-            "duration": 9,
-            "rect_x": 121,
-            "rect_y": 129,
-            "rect_width": 316,
-            "rect_height": 268,
+            "name": "Scenario 677",
+            "duration": 18,
+            "rect_x": 124,
+            "rect_y": 64,
+            "rect_width": 412,
+            "rect_height": 293,
             "shapes": [
                 {
-                    "shape": "polygon",
-                    "color_change": true,
-                    "size_change": 3.2,
-                    "speed_increase_factor": 1.03,
-                    "growth_rate": 0.06,
-                    "carrying_capacity": 250.62,
-                    "sides_change": 1,
+                    "shape": "circle",
+                    "color_change": false,
+                    "size_change": 4.13,
+                    "speed_increase_factor": 1.05,
+                    "growth_rate": 0.05,
+                    "carrying_capacity": 74.38,
+                    "sides_change": 0,
                     "position_change": false,
-                    "initial_size": 23.11,
-                    "initial_speed_x": 1.16,
-                    "initial_speed_y": 9.6
+                    "initial_size": 28.55,
+                    "initial_speed_x": 3.16,
+                    "initial_speed_y": 4.14
                 }
             ]
         }
