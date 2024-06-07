@@ -1,6 +1,8 @@
 import cv2
 import numpy as np
 import pygame
+from moviepy.editor import VideoFileClip, AudioFileClip
+import os
 
 class Recorder:
     def __init__(self, width, height, output_file):
@@ -18,3 +20,12 @@ class Recorder:
 
     def release(self):
         self.video_writer.release()
+
+    def combine_video_audio(self, audio_file, final_output_file):
+        video_clip = VideoFileClip(self.output_file)
+        audio_clip = AudioFileClip(audio_file)
+        final_clip = video_clip.set_audio(audio_clip)
+        final_clip.write_videofile(final_output_file, codec='libx264', audio_codec='aac')
+        
+        # Delete the original video file after combining
+        os.remove(self.output_file)

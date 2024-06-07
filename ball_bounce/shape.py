@@ -1,8 +1,29 @@
 import random
 import math
+import logging
+import asyncio
+from datetime import datetime
+
+from pydub.generators import Sine
+
+# Set up the logger
+logger = logging.getLogger('shape_collision_logger')
+logger.setLevel(logging.INFO)
+fh = logging.FileHandler('shape_collisions.log')
+fh.setLevel(logging.INFO)
+formatter = logging.Formatter('%(asctime)s - %(message)s')
+fh.setFormatter(formatter)
+logger.addHandler(fh)
+
+# Define some random notes (frequencies in Hz)
+NOTES = [261.63, 293.66, 329.63, 349.23, 392.00, 440.00, 493.88]  # C4, D4, E4, F4, G4, A4, B4
 
 class Shape:
+    shape_counter = 0
+
     def __init__(self, config):
+        Shape.shape_counter += 1
+        self.identifier = Shape.shape_counter
         self.shape = config["shape"]
         self.size = float(config.get("initial_size", 20))
         self.speed = [float(config.get("initial_speed_x", 5)), float(config.get("initial_speed_y", 5))]
@@ -15,35 +36,46 @@ class Shape:
         self.speed_increase_factor = float(config.get("speed_increase_factor", 1.01))
         self.growth_rate = float(config.get("growth_rate", 0.1))
         self.carrying_capacity = float(config.get("carrying_capacity", 300))
+        self.collisions = []
+        self.note = random.choice(NOTES)
 
     def move(self):
         self.position[0] += self.speed[0]
         self.position[1] += self.speed[1]
 
-    def bounce(self, boundary):
+    async def log_collision(self):
+        log_message = f"Shape ID: {self.identifier} hit the boundary with note {self.note}"
+        logger.info(log_message)
+        self.collisions.append((datetime.now(), self.identifier, self.note))
+
+    async def bounce(self, boundary):
         collision = False
-        max_size = min(boundary.width, boundary.height) / 2 - 5
+        max_size = min(boundary.width, boundary.height) / 2
 
         if self.position[0] - self.size <= boundary.x:
             self.speed[0] = abs(self.speed[0]) * self.speed_increase_factor
             self.position[0] = boundary.x + self.size
             self.change_properties(max_size)
+            await self.log_collision()
             collision = True
         elif self.position[0] + self.size >= boundary.x + boundary.width:
             self.speed[0] = -abs(self.speed[0]) * self.speed_increase_factor
             self.position[0] = boundary.x + boundary.width - self.size
             self.change_properties(max_size)
+            await self.log_collision()
             collision = True
         
         if self.position[1] - self.size <= boundary.y:
             self.speed[1] = abs(self.speed[1]) * self.speed_increase_factor
             self.position[1] = boundary.y + self.size
             self.change_properties(max_size)
+            await self.log_collision()
             collision = True
         elif self.position[1] + self.size >= boundary.y + boundary.height:
             self.speed[1] = -abs(self.speed[1]) * self.speed_increase_factor
             self.position[1] = boundary.y + boundary.height - self.size
             self.change_properties(max_size)
+            await self.log_collision()
             collision = True
 
         return collision
@@ -56,3 +88,6 @@ class Shape:
         self.size = min(max(10, self.size), max_size)
         if self.sides is not None:
             self.sides = min(12, self.sides + self.sides_change)
+
+    def get_collisions(self):
+        return self.collisions
