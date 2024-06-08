@@ -1,4 +1,6 @@
-# Bouncing Shapes with Sound
+# Ball Bounce
+
+![](/example.gif)
 
 This project simulates bouncing shapes within a defined boundary. Each shape is assigned a unique piano note that plays when the shape collides with the boundary. The shapes can grow, change color, and vary in speed. The game speed adjusts dynamically based on CPU usage to prevent crashes.
 
@@ -31,6 +33,16 @@ This project simulates bouncing shapes within a defined boundary. Each shape is 
 - `ffmpeg` for audio processing
 
 ## Installation
+
+##### TL;DR
+
+Run
+
+```bash
+./install
+```
+
+##### Full
 
 1. **Clone the repository:**
 
@@ -109,7 +121,7 @@ This project simulates bouncing shapes within a defined boundary. Each shape is 
 ## Directory Structure
 
 ```
-bouncing-shapes-with-sound/
+ball_bounce/
 ├── .venv/
 ├── base.py
 ├── boundary.py
