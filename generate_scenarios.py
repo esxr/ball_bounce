@@ -21,7 +21,7 @@ def generate_random_shape():
 
 def generate_random_scenario():
     scenario = {
-        "name": f"Scenario {random.randint(1, 1000)}",
+        "name": f"scenario_{random.randint(1, 100000)}",
         "duration": random.randint(5, 20),
         "rect_x": random.randint(50, 150),
         "rect_y": random.randint(50, 150),
