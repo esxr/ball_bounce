@@ -1,51 +1,25 @@
 {
     "scenarios": [
         {
-            "name": "Scenario 281",
-            "duration": 14,
-            "rect_x": 108,
-            "rect_y": 149,
-            "rect_width": 481,
-            "rect_height": 341,
+            "name": "Scenario 726",
+            "duration": 17,
+            "rect_x": 118,
+            "rect_y": 134,
+            "rect_width": 490,
+            "rect_height": 365,
             "shapes": [
                 {
                     "shape": "polygon",
-                    "color_change": false,
-                    "size_change": 3.42,
-                    "speed_increase_factor": 1.03,
-                    "growth_rate": 0.09,
-                    "carrying_capacity": 175.19,
-                    "sides_change": 0,
-                    "position_change": false,
-                    "initial_size": 23.09,
-                    "initial_speed_x": 5.17,
-                    "initial_speed_y": 1.41
-                },
-                {
-                    "shape": "rectangle",
                     "color_change": true,
-                    "size_change": 1.86,
+                    "size_change": -1.14,
                     "speed_increase_factor": 1.04,
-                    "growth_rate": 0.01,
-                    "carrying_capacity": 102.33,
-                    "sides_change": 0,
-                    "position_change": false,
-                    "initial_size": 48.19,
-                    "initial_speed_x": 6.95,
-                    "initial_speed_y": 6.87
-                },
-                {
-                    "shape": "polygon",
-                    "color_change": false,
-                    "size_change": 4.31,
-                    "speed_increase_factor": 1.03,
-                    "growth_rate": 0.04,
-                    "carrying_capacity": 213.22,
-                    "sides_change": 3,
+                    "growth_rate": 0.02,
+                    "carrying_capacity": 256.66,
+                    "sides_change": 2,
                     "position_change": true,
-                    "initial_size": 22.25,
-                    "initial_speed_x": 1.91,
-                    "initial_speed_y": 3.93
+                    "initial_size": 46.48,
+                    "initial_speed_x": 1.16,
+                    "initial_speed_y": 7.56
                 }
             ]
         }

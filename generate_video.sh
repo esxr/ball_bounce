@@ -17,7 +17,7 @@ source .venv/bin/activate
 
 # Step 4: Run the main script with all provided arguments
 echo "Running the main script with generated scenarios..."
-python base.py "$@"
+python base.py --record "$@"
 
 # Step 5: Deactivate the virtual environment
 deactivate
